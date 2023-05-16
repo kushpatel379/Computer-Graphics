@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="../CSS/mathcont.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Canvas with rubber band selection box." />
+    <meta name="keywords" content="canvas, rubber band, selection, save, screen, restore, HTML5" />
+    <script type="text/javascript" defer src="MV.js"></script>
+    <title>Simple Rubberbanding Example.</title>
+
+    <style>
+      table {
+        border: 1px solid black;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td width="600" height="600">
+          <!-- <button type="button" id="Line" > Line </button>
+        <button type="button" id="Circle" > Circle </button>
+        <button type ="button" id = "Rectangle"> Rectangle </button>
+        <button type="button" id="Triangle" > Triangle </button>
+        <button type="button" id="Polygon" > Polygon </button> -->
+
+
+
+        <!-- Drop down menu -->
+          <select id="shape_selection">                           
+            <option value="line">Line</option>
+            <option value="circle">Circle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+            <option value="polygon">Polygon</option>
+          </select>
+
+          <div>
+
+            <!-- these attributes and functions only work when clicked in the canvas itself and not outside of it -->
+            <canvas
+              id="layer1"
+              style="z-index: 1; left: 0px; top: 0px"
+              width="500"
+              height="500"
+              onLoad="initialize()"
+              onMouseDown="mouse_down(event)"
+              onMouseUp="mouse_up(event)"
+              onMouseMove="mouse_move(event)"
+            >
+              Your browser doesn't support the canvas tag!</canvas
+            >
+          </div>
+        </td>
+
+        <td>
+          <h1>Canvas with rubber band selection box.</h1>
+
+          mouse_down:
+          <p id="val1"></p>
+
+          mouse_move:
+          <p id="val2"></p>
+
+          mouse_up:
+          <p id="val3"></p>
+        </td>
+      </tr>
+    </table>
+
+    <script defer src="/Program3.js" defer src="MV.js"></script>
+  </body>
+</html>

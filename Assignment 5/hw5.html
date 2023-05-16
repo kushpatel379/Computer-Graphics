@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Added input values for the line -->
+<div>                                                    
+
+    <label for = "line-x1"> Line Start X:  </label>
+    <input id="linex1" type = "number">
+    <label for = "line-x2"> Line End X:  </label>
+    <input id="linex2" type = "number"> <br>
+
+    <label for = "line-y1"> Line Start Y:  </label>
+    <input id="liney1" type = "number">
+    <label for = "line-y2"> Line End Y:  </label>
+    <input id="liney2" type = "number"> <br>
+
+</div>
+
+<!-- Added input values for the circle -->
+<div>
+    <label for = "circle-x"> Circle X:  </label>
+    <input id="CircleX" type = "number">
+
+    <label for = "circle-y"> Circle Y:  </label>
+    <input id="CircleY" type = "number">
+
+    <label for = "circle-radius"> Circle Radius:  </label>
+    <input id="CircleRadius" type = "number">
+
+</div>
+
+
+<!-- Added input values for the curve -->
+
+<div>
+    <label for = "curve-x1"> Curve Start X1:  </label>
+    <input id="curvex1" type = "number">
+    <label for = "curve-x2"> Curve End X2:  </label>
+    <input id="curvex2" type = "number"> <br>
+
+    <label for = "curve-y1"> Curve Start Y1:  </label>
+    <input id="curvey1" type = "number">
+    <label for = "curve-y2"> Curve End Y2:  </label>
+    <input id="curvey2" type = "number"> <br>
+
+    <label for = "curve-x3"> Curve Start X3:  </label>
+    <input id="curvex3" type = "number">
+    <label for = "curve-x4"> Curve End X4:  </label>
+    <input id="curvex4" type = "number"> <br>
+
+    <label for = "curve-y3"> Curve Start Y3:  </label>
+    <input id="curvey3" type = "number">
+    <label for = "curve-y4"> Curve End Y4:  </label>
+    <input id="curvey4" type = "number"> <br>
+
+    
+
+</div>
+
+<!-- Added button to choose algorithm/shape -->
+<div>
+    <button id = "DDA"> DDA </button>
+    <button id = "MidpointLine"> Midpoint Line </button>
+    <button id = "MidpointCircle"> Midpoint Circle </button>
+    <button id = "MidpointEllipse"> Midpoint Ellipse </button>
+    <button id = "Bezier"> Bezier Curve </button>
+    <button id = "Hermite"> Hermite Curve </button>
+    <button id = "B-Spline"> B-Spline Curve </button>
+
+
+</div>
+
+<div>
+    <button id = "clear"> Clear Canvas </button>
+</div>
+
+
+<!-- <script type="text/javascript" src="midpoint.js"></script> -->
+<!-- <script type="text/javascript" src="midpoint_circle.js"></script> -->
+<!-- <script type="text/javascript" src="midpoint_ellipse.js"></script> -->
+<!-- <script type="text/javascript" src="dda.js"></script> -->
+<script type="text/javascript" src="hw5.js" defer></script>
+
+
+<body>
+
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    
+    <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    var i;
+    // for (i = 0; i < 200; i++) { 
+    //     ctx.fillRect(i,i,1,1); // fill in the pixel at (10,10)
+    // }
+    </script>
+    
+</body>
+
+</html>

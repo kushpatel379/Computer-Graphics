@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+
+<div>
+    depth .05
+    <input id="depthSlider" type="range" min=".05" max="3" step="0.1" value="2" />
+    3
+</div>
+
+<div>
+    radius 0.05
+    <input id="radiusSlider" type="range" min="0.05" max="2" step="0.1" value="1" />
+    2
+</div>
+
+<div>
+    theta -90
+    <input id="thetaSlider" type="range" min="-90" max="90" step="5" value="0" />
+    90
+</div>
+
+<div>
+    phi -90
+    <input id="phiSlider" type="range" min="-90" max="90" step="5" value="0" />
+    90
+</div>
+
+<div>
+    width 0
+    <input id="widthSlider" type="range" min="0" max="20" step="1" value="10" />
+    20
+</div>
+
+<div>
+    height 0
+    <input id="heightSlider" type="range" min="0" max="20" step="1" value="10" />
+    20
+</div>
+
+
+
+<!-- Added input values for the line  REMOVE "FOR"? -->
+<div>                                                    
+
+    <label for = "line-x1"> Line Start X:  </label>
+    <input id="linex1" type = "number">
+    <label for = "line-x2"> Line End X:  </label>
+    <input id="linex2" type = "number"> <br>
+
+    <label for = "line-y1"> Line Start Y:  </label>
+    <input id="liney1" type = "number">
+    <label for = "line-y2"> Line End Y:  </label>
+    <input id="liney2" type = "number"> <br>
+
+    <label for = "line-z1"> Line Start Z:  </label>
+    <input id="linez1" type = "number">
+    <label for = "line-z2"> Line End Z:  </label>
+    <input id="linez2" type = "number">
+
+</div>
+<br>
+
+<!-- Added input values for the circle -->
+<div>
+    <label for = "circle-x"> Circle X:  </label>
+    <input id="CircleX" type = "number">
+
+    <label for = "circle-y"> Circle Y:  </label>
+    <input id="CircleY" type = "number">
+
+    <label for = "circle-z"> Circle Z:  </label>
+    <input id="CircleZ" type = "number">
+
+    <label for = "circle-radius"> Circle Radius:  </label>
+    <input id="CircleRadius" type = "number">
+
+</div>
+
+
+<!-- Added button to animate -->
+<div>
+    <button id = "animateLine"> Animate Line </button>
+    <button id = "animateCircle"> Animate Circle </button>
+
+</div>
+
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+    attribute  vec4 vPosition;
+    attribute  vec4 vColor;
+    varying vec4 fcolor;
+
+    uniform mat4 modelViewMatrix;
+    uniform mat4 projectionMatrix;
+
+    void main() 
+    {
+        gl_Position = projectionMatrix*modelViewMatrix*vPosition;
+        fcolor = vColor;
+    } 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+
+    varying vec4 fcolor;
+
+    void
+    main()
+    {
+        gl_FragColor = fcolor;
+    }
+</script>
+
+<script type="text/javascript" src="webgl-utils.js"></script>
+<script type="text/javascript" src="initShaders.js"></script>
+<script type="text/javascript" src="MV.js"></script>
+<script type="text/javascript" src="Assignment4.js"></script>
+
+<body>
+<canvas id="gl-canvas" width="512" height="412">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>2D Sierpinski Gasket</title>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+void
+main()
+{
+	gl_PointSize = 1.0;
+    gl_Position = vPosition;
+}
+</script>
+
+
+<!-- Triangle color -->
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+void
+main()
+{
+    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 ); 
+}
+</script>
+
+
+<script type="text/javascript" defer src="webgl-utils.js"></script>          <!-- Added defer in these comments to make sure they load one by one  -->
+<script type="text/javascript" defer src="initShaders.js"></script>
+<script type="text/javascript" defer src="MV.js"></script>
+<script type="text/javascript" defer src="gasket1.js"></script>
+</head>
+
+<div>                                                                        
+    <label> Points: </label>                                                <!-- Code to change points-->
+    <input type = "range" id = "points" min = "500" max = "5000" >
+
+    <label> Animation Speed: </label>                                       <!-- Code to change speed-->
+    <input type = "range" id = "speed" min = "500" max = "2000">
+
+    <label> ViewPortSize: </label>                                          <!-- Code to change size-->
+    <input type = "range" id = "size" min = "500" max = "2000" >
+
+    <label> Color Picker: </label>                                          <!-- Code to change color-->
+    <input type="color" id="colorPicker" value="#ff0000" />
+
+
+</div>
+
+<div id = "status"> Status: </div>
+
+<div>
+    <button type="button" id="print" > Print </button>                   <!-- Code to prints the values-->
+    <button type = "button" id="restart"> Restart</button>               <!-- Code to show restart button-->
+    <button type = "button" id = "vertex"> Vertices </button>
+    <p id="points_label"> Points: </p>
+    <p id="speed_label"> Speed: </p>
+    <p id="size_label"> Size: </p>
+</div>
+
+
+
+<body>
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+
+</body>
+</html>
